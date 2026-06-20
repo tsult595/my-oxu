@@ -22,6 +22,7 @@ const NewsCard = ({ news }: { news: any }) => {
       // toast.error("Ошибка при установке лайка")
     }
     
+
   })
 
   
