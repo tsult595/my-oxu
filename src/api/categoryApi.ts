@@ -50,7 +50,8 @@ const deleteCategory = async (id) => {
     } catch (error) {
         console.error(error);
         throw error;
-    }   
+    } 
+      
 }
 
 const editCategory = async (id, categoryData) => {
