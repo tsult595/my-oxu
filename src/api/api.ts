@@ -9,4 +9,5 @@ export const api = axios.create({
         // 'Authorization': `Bearer ${localStorage.getItem('token')}`
     },
     timeout: 10000,
+    
 });
