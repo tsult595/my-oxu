@@ -33,7 +33,7 @@ const Header = () => {
           {isLoading ? (
             <span className="text-gray-400 text-sm px-4">Загрузка категорий...</span>
           ) : (
-            categoriesData.map((item) => (
+            categoriesData.map((item : { _id: string; name: string }) => (
               <Link
                 key={item._id}
                 href={`/categories/${item._id}`}

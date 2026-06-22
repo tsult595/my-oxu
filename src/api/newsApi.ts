@@ -2,7 +2,7 @@ import { getToken } from "./adminAuth"
 import { api } from "./api"
 
 
-export const getAllNews = async ({ search, page, limit, sort = 'newest' }) => {
+export const getAllNews = async ({ search , page, limit, sort = 'newest' }: { search?: string, page?: string, limit?: string, sort?: string }) => {
   const response = await api.get('/news', {
     params: {
       page: page || '1',
@@ -16,7 +16,7 @@ export const getAllNews = async ({ search, page, limit, sort = 'newest' }) => {
   return response.data
 }
 
-export const getNewsById = async (id) => {
+export const getNewsById = async (id: string) => {
   const response = await api.get(`/news/${id}`)
   return response.data
 }
@@ -41,7 +41,7 @@ export const deleteNews = async (id: string) => {
 }
 
 
-export const editNews = async (id: string, data: any) => {
+export const editNews = async (id: string, data: [{ title: string, content: string, image: string, category_id: string }]) => {
   try {
     const token = getToken()
     
@@ -61,7 +61,7 @@ export const editNews = async (id: string, data: any) => {
 
 
 
-export const createNews = async ({ title, content, image, category_id }) => {
+export const createNews = async ({ title , content, image, category_id }: { title: string, content: string, image: string, category_id: string }) => {
   try {
     const token = getToken()
     

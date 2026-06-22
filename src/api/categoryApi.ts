@@ -10,7 +10,7 @@ import { api } from "./api";
     }
 }
 
-const getCategoryById = async (id) => {
+const getCategoryById = async (id: string) => {
     try {
         const response = await api.get(`/news_by_categ/${id}`);
         return response.data;
@@ -22,7 +22,7 @@ const getCategoryById = async (id) => {
 
 
 
-const createCategory = async (categoryData) => {
+const createCategory = async (categoryData: { name: string }) => {
     try {
         const token = localStorage.getItem("token");
         // Передаем categoryData как Body (тело запроса)
@@ -38,7 +38,7 @@ const createCategory = async (categoryData) => {
     }
 }
 
-const deleteCategory = async (id) => {
+const deleteCategory = async (id: string) => {
     try {
         const token = localStorage.getItem("token");
         const response = await api.delete(`/categories/${id}`, {
@@ -54,7 +54,7 @@ const deleteCategory = async (id) => {
       
 }
 
-const editCategory = async (id, categoryData) => {
+const editCategory = async (id: string, categoryData: { name: string }) => {
     try {
         const token = localStorage.getItem("token");
         const response = await api.patch(`/categories/${id}`, categoryData, {

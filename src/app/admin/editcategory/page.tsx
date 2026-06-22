@@ -7,7 +7,7 @@ import { useState } from "react"
 const EditCategory = () => {
   const [isOpen, setIsOpen] = useState(false)
     const [categoryName, setCategoryName] = useState('')
-    const [selectedCategoryId, setSelectedCategoryId] = useState(null) // Временный стейт для выбранной категории
+    const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
   // Временный стейт для инпута в UI
    const queryClient = useQueryClient()
     const {data: categoryData, isLoading} = useQuery({
@@ -16,7 +16,7 @@ const EditCategory = () => {
     })
 
      const {mutate: editCategoryMutation} = useMutation({
-        mutationFn: ({ _id, name }) => editCategory(_id, { name }),
+       mutationFn: ({ _id, name }: { _id: string; name: string }) => editCategory(_id, { name }),
         
         onSuccess: () => {
             // После успешного редактирования категории, можно обновить список категорий
@@ -37,7 +37,7 @@ const EditCategory = () => {
             isLoading ? (
                 <p>Загрузка...</p>
             ) : (
-        categoryData.map((category) => (
+        categoryData.map((category : { _id: string; name: string }) => (
          <div key={category._id} className="w-full flex items-center justify-between p-4 bg-white rounded-lg border border-gray-200 shadow-sm mb-2">
          <h2 className="text-lg font-medium text-gray-900">{category.name}</h2>
            <button 
@@ -107,7 +107,9 @@ const EditCategory = () => {
                 <button 
                   type="button"
                   onClick={() => {
-                    editCategoryMutation({ _id: selectedCategoryId, name: categoryName });
+                    if (selectedCategoryId) {
+                   editCategoryMutation({ _id: selectedCategoryId, name: categoryName });
+                    }
                     setIsOpen(false);
                   }}
                   className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-sm font-medium text-white transition-colors"

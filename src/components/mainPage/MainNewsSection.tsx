@@ -24,7 +24,7 @@ const MainNewsSection = () => {
 
   const { data: newsData, isLoading } = useQuery({
     queryKey: ['news', currentSort], 
-    queryFn: () => getAllNews({ page: 1, limit: 10, search: '', sort: currentSort })
+    queryFn: () => getAllNews({ page: '1', limit: '50', search: '', sort: currentSort })
   })
 
   // 3. Безопасное переключение сортировки без затирания других query-параметров (категорий, поиска)
@@ -98,7 +98,7 @@ const MainNewsSection = () => {
             ) : (
               /* Сетка новостных карточек */
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0">
-                {newsList.map((news: any) => (
+                {newsList.map((news: { _id: string; id: string }) => (
                   <NewsCard key={news._id || news.id} news={news} />
                 ))}
                 

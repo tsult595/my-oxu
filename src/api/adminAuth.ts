@@ -2,7 +2,7 @@ import { api } from "./api";
 
 
 
-export async function loginAdmin({ login, password }) {
+export async function loginAdmin({ login, password }: { login: string, password: string }) {
     try {
         // 🔥 Обязательно await, иначе вернется Promise, а не ответ сервера!
         const res = await api.post("/login", { login, password })
@@ -40,7 +40,7 @@ export function getToken() {
 }
 
 
-export function saveToken(token) {
+export function saveToken(token: string) {
     localStorage.setItem("token", token)
 }
 

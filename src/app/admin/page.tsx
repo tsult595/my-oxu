@@ -16,7 +16,7 @@ const AdminDashboard = () => {
   
   const { data: newsData, isLoading } = useQuery({
     queryKey: ['admin-news'],
-    queryFn: () => getAllNews({ page: 1, limit: 50, search: '', sort: 'newest' }) // Админу можно вывалить сразу побольше
+    queryFn: () => getAllNews({ page: '1', limit: '50', search: '', sort: 'newest' })
   })
 
   const { mutate: deleteNewsMutation } = useMutation({
@@ -98,7 +98,7 @@ const AdminDashboard = () => {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-50 text-sm text-gray-700">
-            {newsList.map((news: any) => (
+            {newsList.map((news: { _id: string; title: string; view: number; like: number }) => (
               <tr key={news._id} className="hover:bg-gray-50/50 transition-colors">
                 <td className="p-4 font-medium max-w-md truncate">{news.title || "Без заголовка"}</td>
                 <td className="p-4 text-gray-500">{news.view || 0} 👀</td>

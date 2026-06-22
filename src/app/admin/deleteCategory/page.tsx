@@ -35,7 +35,7 @@ const DeleteCategory = () => {
     <div>
         <h1>Удалить категорию</h1>
         <div className="category-details text-black">
-            {categories.map((category) => (
+            {categories.map((category : { _id: string; name: string }) => (
                 <div onClick={()=>handleDelete(category._id)} key={category._id}>
                     <h2>{category.name}</h2>
                 </div>

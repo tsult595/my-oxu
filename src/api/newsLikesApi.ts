@@ -1,6 +1,6 @@
 import { api } from "./api";
 
-const like = async (id) => {
+const like = async (id: string) => {
     try {
         const response = await api.patch(`/news_like/${id}`);
         return response.data;
@@ -9,7 +9,7 @@ const like = async (id) => {
         throw error;
     }
 }
-const dislike = async (id) => {
+const dislike = async (id: string) => {
     try {
         const response = await api.patch(`/news_dislike/${id}`);
         return response.data;

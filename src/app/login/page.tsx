@@ -43,7 +43,7 @@ const AdminLoginPage = () => {
       return
     }
     // Отправляем данные на бэк
-    mutate({ login, password })
+    mutate({ login , password })
   }
 
   return (

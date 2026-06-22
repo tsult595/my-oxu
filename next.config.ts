@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const allowedDomains = [
-  "encrypted-tbn0.gstatic.com", // 🔥 Добавили кэш картинок Google
+  "encrypted-tbn0.gstatic.com",
   "sonxeber.az",
   "apa.az",
   "report.az",
