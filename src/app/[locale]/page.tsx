@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import MainNewsSection from "../components/mainPage/MainNewsSection";
+import MainNewsSection from "../../components/mainPage/MainNewsSection";
 
 export default function Home() {
   return (

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 // 🔥 Импортируем твои готовые функции из сервиса авторизации
-import { getToken, verifyAdmin, logoutAdmin } from '../../api/adminAuth' 
+import { getToken, verifyAdmin, logoutAdmin } from '../../../api/adminAuth' 
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter()

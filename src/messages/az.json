@@ -1,0 +1,20 @@
+{
+  "main": {
+    "title": "MyOxu-a xoş gəldiniz",
+    "description": "Ən son xəbərlər və yeniliklər üçün sizin mənbəniz."
+  },
+  "header": {
+    "live": "CANLI",
+    "login": "GİRİŞ",
+    "loading": "Kateqoriyalar yüklənir..."
+  },
+  "admin": {
+    "dashboard": "Admin Paneli",
+    "login": "Admin Giriş",
+    "logout": "Çıxış"
+  },
+    "advertisement": {
+        "title": "Reklam",
+        "description": "Reklamınızı buraya yerləşdirin."
+    }
+}

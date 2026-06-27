@@ -1,0 +1,20 @@
+{
+  "main": {
+    "title": "Welcome to MyOxu",
+    "description": "Your source for the latest news and updates."
+  },
+  "header": {
+    "live": "Live",
+    "login": "Login",
+    "loading": "Categories are loading..."
+  },
+  "admin": {
+    "dashboard": "Admin Panel",
+    "login": "Admin Login",
+    "logout": "Logout"
+  },
+    "advertisement": {
+        "title": "Advertisement",
+        "description": "Place your advertisement here."
+    }
+} 

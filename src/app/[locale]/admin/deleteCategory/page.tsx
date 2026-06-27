@@ -1,6 +1,6 @@
 "use client"
 
-import { deleteCategory, getCategories } from "../../../api/categoryApi"
+import { deleteCategory, getCategories } from "../../../../api/categoryApi"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 
 
